@@ -3,6 +3,7 @@ import java.util.concurrent.Callable;
 public class Loader
 {
     public static void main(String[] args) {
+        // Урок №1 Понятие класса и объекта
         Cat Patrick = new Cat();
         System.out.println ( "Patrick - " + Patrick.getWeight());
         Patrick.feed(450.45);
@@ -19,6 +20,22 @@ public class Loader
             Wilson.feed(100.4);
         }
         System.out.println( "Wilson - " + Wilson.getStatus());
+        ///// Урок №2 Метод, параметры, return
+        Cat Stiv = new Cat();
+        System.out.println("Stiv- " + Stiv.getWeight());
+        Stiv.feed(150.0);
+        System.out.println("Stiv - " + Stiv.getWeight());
+        Stiv.pee();
+        Stiv.pee();
+        System.out.println("Stiv - " + Stiv.getWeight());
+        System.out.println(Stiv.getFoodWheigh());
+        Stiv.feed(150.0);
+        System.out.println(Stiv.getFoodWheigh());
+        Stiv.feed(200.0);
+        System.out.println(Stiv.getFoodWheigh());
+
+
+
 
 
     }
