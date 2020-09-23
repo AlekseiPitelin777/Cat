@@ -2,13 +2,12 @@ import java.util.concurrent.Callable;
 
 public class Loader
 {
-    public static void main(String[] args) {
-        // Урок №1 Понятие класса и объекта
+    public static void main(String[] args) {  // Урок №1 Понятие класса и объекта
         Cat patrick = new Cat();
         System.out.println ( "Patrick - " + patrick.getWeight());
         patrick.feed(450.45);
         System.out.println("Patrick - " + patrick.getWeight());
-       //================================================
+        //================================================
         Cat john = new Cat();
         while (!john.getStatus().equals("Dead")) {
             john.meow();
@@ -33,11 +32,18 @@ public class Loader
         System.out.println(stiv.getFoodWheigh());
         stiv.feed(200.0);
         System.out.println(stiv.getFoodWheigh());
+
         ////// Урок 3. Статические методы и переменные
 
+            System.out.println(Cat.catsCount);
+            Cat barsik = new Cat();
+            Cat sony = new Cat();
+            System.out.println(Cat.catsCount);
+            while (!sony.getStatus().equals("Dead")){
+                sony.meow();
+                sony.feed(125.1);
+            }
 
-
-
-
-    }
+            }
 }
+
