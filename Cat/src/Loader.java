@@ -35,15 +35,13 @@ public class Loader
 
         ////// Урок 3. Статические методы и переменные
 
-            System.out.println(Cat.catsCount);
-            Cat barsik = new Cat();
-            Cat sony = new Cat();
-            System.out.println(Cat.catsCount);
-            while (!sony.getStatus().equals("Dead")){
-                sony.meow();
-                sony.feed(125.1);
-            }
+        System.out.println(Cat.catsCount);
+        Cat barsik = new Cat();
+        Cat sony = new Cat();
+        System.out.println(Cat.catsCount);
 
-            }
-}
+
+    }
+    }
+
 
