@@ -27,45 +27,53 @@ public class Cat
         return foodWeight;
     }
     //урок номер 2 сходить в туалет
-    public void pee()
-    {
-        if(catAlive){
-        if (weight <= originWeight) {
-            catsCount--;
-            catAlive = false;
-            System.out.println("I don't want to toilet");
-        } else
-        weight = weight -20;
-        System.out.println("Pee");
-    }}
+    public void catDead(){
+        if(weight<minWeight){
+        catsCount--;
+        catAlive = false;
+        System.out.println(" I dead");}
+
+    }
+
+
+
+
+    public void pee() {
+        if (catAlive) {
+            weight = weight - 20;
+            System.out.println("Pee");
+            if (weight <= originWeight) {
+                System.out.println("I don't want to toilet");}
+                else {catDead();
+                }
+        }
+    }
+
     public int getCatsCount(){
         return catsCount;}
 
     public void meow() {
         if(catAlive){
         weight = weight - 1;
-        System.out.println("Meow");
-        if(weight< minWeight){
-            catsCount--;
-            catAlive = false;
-            System.out.println("I can't speak");
+        System.out.println("Meow");}
+        else {catDead();}
     }
-        }
 
-    }
+
 
     public void feed(Double amount) {
         if (catAlive){
             weight = weight + amount;
             foodWeight = foodWeight + amount;
-        if (weight > minWeight){
+            if (weight > maxWeight){
                 catsCount--;
+                catAlive = false;
                 System.out.println("I can't eat");
+            }
+
             }
         }
 
-
-    }
 
     public void drink(Double amount) {
         if(catAlive){
