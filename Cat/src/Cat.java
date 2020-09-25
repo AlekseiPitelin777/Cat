@@ -3,11 +3,13 @@ public class Cat
 {
     private double originWeight;
     private double weight;
-    private double minWeight;
-    private double maxWeight;
     private double foodWeight;
     public static int catsCount =0;
     public boolean catAlive = true;
+
+    public static final int COUNT_EYES = 2;
+    public static final double MIN_WEIGHT = 1000.0;
+    public static final double MAX_WEIGHT = 9000.5;
 
 
 
@@ -15,8 +17,6 @@ public class Cat
     public Cat() {
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
-        minWeight = 1000.0;
-        maxWeight = 9000.5;
         catsCount++;
 
 
@@ -28,7 +28,7 @@ public class Cat
     }
     //урок номер 2 сходить в туалет
     public void catDead(){
-        if(weight<minWeight){
+        if(weight<MIN_WEIGHT){
         catsCount--;
         catAlive = false;
         System.out.println(" I dead");}
@@ -65,7 +65,7 @@ public class Cat
         if (catAlive){
             weight = weight + amount;
             foodWeight = foodWeight + amount;
-            if (weight > maxWeight){
+            if (weight > MAX_WEIGHT){
                 catsCount--;
                 catAlive = false;
                 System.out.println("I can't eat");
@@ -78,7 +78,7 @@ public class Cat
     public void drink(Double amount) {
         if(catAlive){
         weight = weight + amount;
-        if(weight>maxWeight){
+        if(weight>MAX_WEIGHT){
             catsCount--;
             catAlive = false;
             System.out.println("I can't drink");
@@ -94,9 +94,9 @@ public class Cat
     }
     public String getStatus ()
         {
-            if (weight < minWeight) {
+            if (weight < MIN_WEIGHT) {
                 return "Dead";
-            } else if (weight > maxWeight) {
+            } else if (weight > MAX_WEIGHT) {
                 return "Exploded";
             } else if (weight > originWeight) {
                 return "Sleeping";
