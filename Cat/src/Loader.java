@@ -4,7 +4,7 @@ public class Loader
 {
     public static void main(String[] args) {  // Урок №1 Понятие класса и объекта
         Cat patrick = new Cat();
-        System.out.println ( "Patrick - " + patrick.getWeight());
+        System.out.println("Patrick - " + patrick.getWeight());
         patrick.feed(450.45);
         System.out.println("Patrick - " + patrick.getWeight());
         //================================================
@@ -18,7 +18,7 @@ public class Loader
         while (!wilson.getStatus().equals("Exploded")) {
             wilson.feed(100.4);
         }
-        System.out.println( "Wilson - " + wilson.getStatus());
+        System.out.println("Wilson - " + wilson.getStatus());
         ///// Урок №2 Метод, параметры, return
         Cat stiv = new Cat();
         System.out.println("Stiv- " + stiv.getWeight());
@@ -39,14 +39,24 @@ public class Loader
         Cat barsik = new Cat();
         Cat sony = new Cat();
         System.out.println(Cat.catsCount);
-        while (!sony.getStatus().equals("Dead")){
+        while (!sony.getStatus().equals("Dead")) {
             sony.meow();
             System.out.println(sony.getStatus());
             System.out.println(Cat.catsCount);
         }
 
 
-    }
-    }
+        //===========урок 5
+
+        Cat mickel = new Cat(56.5);
+        System.out.println(mickel.getWeight());
+
+        ///+++++++++++++++++++++++++++++++++++++++++
+        public static Cat getKitten(){
+            return new Cat()}
 
 
+
+
+        }
+    }

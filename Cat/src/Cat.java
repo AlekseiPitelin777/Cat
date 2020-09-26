@@ -10,6 +10,8 @@ public class Cat
     public static final int COUNT_EYES = 2;
     public static final double MIN_WEIGHT = 1000.0;
     public static final double MAX_WEIGHT = 9000.5;
+    public double setWeight;
+
 
 
 
@@ -18,13 +20,22 @@ public class Cat
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
         catsCount++;
+    }
+
+    public Cat(double setWeight){
+        this();
+        this.setWeight=setWeight;
+    }
 
 
-      }
       //======= Урок номер 2 возвратить массу съеденной еды
     public Double getFoodWheigh() {
 
         return foodWeight;
+    }
+
+    public double getSetWeight(){
+        return setWeight;
     }
     //урок номер 2 сходить в туалет
     public void catDead(){
