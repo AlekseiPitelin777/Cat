@@ -39,6 +39,11 @@ public class Loader
         Cat barsik = new Cat();
         Cat sony = new Cat();
         System.out.println(Cat.catsCount);
+        while (!sony.getStatus().equals("Dead")){
+            sony.meow();
+            System.out.println(sony.getStatus());
+            System.out.println(Cat.catsCount);
+        }
 
 
     }

@@ -28,7 +28,7 @@ public class Cat
     }
     //урок номер 2 сходить в туалет
     public void catDead(){
-        if(weight<MIN_WEIGHT){
+        if(weight<MIN_WEIGHT||weight>MAX_WEIGHT){
         catsCount--;
         catAlive = false;
         System.out.println(" I dead");}
@@ -53,11 +53,14 @@ public class Cat
         return catsCount;}
 
     public void meow() {
-        if(catAlive){
-        weight = weight - 1;
-        System.out.println("Meow");}
-        else {catDead();}
+        if (catAlive){
+            weight = weight-1;
+            System.out.println("Meow");}
+        else {catDead();
+        return;
+        }
     }
+
 
 
 
@@ -65,11 +68,8 @@ public class Cat
         if (catAlive){
             weight = weight + amount;
             foodWeight = foodWeight + amount;
-            if (weight > MAX_WEIGHT){
-                catsCount--;
-                catAlive = false;
-                System.out.println("I can't eat");
-            }
+            System.out.println("I'm eating");}
+            else {catDead();
 
             }
         }
@@ -78,14 +78,12 @@ public class Cat
     public void drink(Double amount) {
         if(catAlive){
         weight = weight + amount;
-        if(weight>MAX_WEIGHT){
-            catsCount--;
-            catAlive = false;
-            System.out.println("I can't drink");
+        System.out.println("I'm drinking");}
+        else {catDead();
         }
     }
 
-    }
+
 
 
     public Double getWeight()
