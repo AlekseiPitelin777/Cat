@@ -2,11 +2,25 @@ import java.util.concurrent.Callable;
 
 public class Loader
 {
-    public static void main(String[] args) {  // Урок №1 Понятие класса и объекта
+
+        public static void main(String[] args) {
+
+
+
+        Cat bublik = getKitten();
+        System.out.println("Bublik-" + bublik.getWeight() + "кг");
+        Cat kostya = getKitten();
+        System.out.println("Kostya-" + kostya.getWeight() + "кг");
+        Cat matvei = getKitten();
+        System.out.println("Matvei-" + matvei.getWeight() + "кг");
+
+
+        //==================================================
         Cat patrick = new Cat();
         System.out.println("Patrick - " + patrick.getWeight());
         patrick.feed(450.45);
         System.out.println("Patrick - " + patrick.getWeight());
+
         //================================================
         Cat john = new Cat();
         while (!john.getStatus().equals("Dead")) {
@@ -48,15 +62,19 @@ public class Loader
 
         //===========урок 5
 
-        Cat mickel = new Cat(56.5);
+        Cat mickel = new Cat(58.4);
         System.out.println(mickel.getWeight());
 
         ///+++++++++++++++++++++++++++++++++++++++++
-        public static Cat getKitten(){
-            return new Cat()}
+
+      
 
 
 
 
         }
+
+    private static Cat getKitten() {
+        return new Cat(1100.0);
     }
+}

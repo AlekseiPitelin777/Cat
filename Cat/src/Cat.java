@@ -2,7 +2,7 @@
 public class Cat
 {
     private double originWeight;
-    private double weight;
+
     private double foodWeight;
     public static int catsCount =0;
     public boolean catAlive = true;
@@ -11,6 +11,7 @@ public class Cat
     public static final double MIN_WEIGHT = 1000.0;
     public static final double MAX_WEIGHT = 9000.5;
     public double setWeight;
+    private double weight;
 
 
 
@@ -22,10 +23,16 @@ public class Cat
         catsCount++;
     }
 
-    public Cat(double setWeight){
+    public Cat(double weight){
         this();
-        this.setWeight=setWeight;
+        this.originWeight = weight;
+        this.weight=weight;
+        if(weight<MIN_WEIGHT || weight>MAX_WEIGHT){
+            catsCount=getCatsCount();
+            catAlive = false;
+        }
     }
+
 
 
       //======= Урок номер 2 возвратить массу съеденной еды
@@ -53,7 +60,7 @@ public class Cat
         if (catAlive) {
             weight = weight - 20;
             System.out.println("Pee");
-            if (weight <= originWeight) {
+            if (catAlive && weight <= originWeight) {
                 System.out.println("I don't want to toilet");}
                 else {catDead();
                 }
@@ -66,9 +73,8 @@ public class Cat
     public void meow() {
         if (catAlive){
             weight = weight-1;
-            System.out.println("Meow");}
-        else {catDead();
-        return;
+            System.out.println("Meow");
+            catDead();
         }
     }
 
@@ -79,8 +85,8 @@ public class Cat
         if (catAlive){
             weight = weight + amount;
             foodWeight = foodWeight + amount;
-            System.out.println("I'm eating");}
-            else {catDead();
+            System.out.println("I'm eating");
+            catDead();
 
             }
         }
@@ -89,8 +95,8 @@ public class Cat
     public void drink(Double amount) {
         if(catAlive){
         weight = weight + amount;
-        System.out.println("I'm drinking");}
-        else {catDead();
+        System.out.println("I'm drinking");
+        catDead();
         }
     }
 
