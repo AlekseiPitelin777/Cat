@@ -13,6 +13,9 @@ public class Cat
     public double setWeight;
     private double weight;
 
+    //************урок 6
+    private String color;
+
 
 
 
@@ -28,13 +31,16 @@ public class Cat
         this.originWeight = weight;
         this.weight=weight;
         if(weight<MIN_WEIGHT || weight>MAX_WEIGHT){
-            catsCount=getCatsCount();
-            catAlive = false;
+           catDead();
         }
     }
 
-
-
+    public void setColor(String color){
+        this.color = color;
+    }
+    public String getColor(){
+        return color;
+    }
       //======= Урок номер 2 возвратить массу съеденной еды
     public Double getFoodWheigh() {
 

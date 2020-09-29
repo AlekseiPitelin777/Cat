@@ -7,12 +7,6 @@ public class Loader
 
 
 
-        Cat bublik = getKitten();
-        System.out.println("Bublik-" + bublik.getWeight() + "кг");
-        Cat kostya = getKitten();
-        System.out.println("Kostya-" + kostya.getWeight() + "кг");
-        Cat matvei = getKitten();
-        System.out.println("Matvei-" + matvei.getWeight() + "кг");
 
 
         //==================================================
@@ -64,17 +58,19 @@ public class Loader
 
         Cat mickel = new Cat(58.4);
         System.out.println(mickel.getWeight());
-
-        ///+++++++++++++++++++++++++++++++++++++++++
-
-      
-
-
-
+        System.out.println(Cat.catsCount);
+        Cat dady = new Cat(900.0);
+        System.out.println(Cat.catsCount);
 
         }
 
     private static Cat getKitten() {
         return new Cat(1100.0);
+
+
+
+
+
+
     }
 }
