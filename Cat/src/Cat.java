@@ -35,6 +35,27 @@ public class Cat
     }
 
 
+    public Cat(Cat clone){
+        this.weight = clone.getWeight();
+        this.originWeight = clone.getOriginWeight();
+        this.color = clone.getColor();
+        this.foodWeight = clone.getFoodWeight();
+    }
+
+    public Cat cloneCat(){
+        return new Cat(this);
+    }
+
+    public double getOriginWeight() {
+        return originWeight;
+    }
+    public double getFoodWeight() {
+        return foodWeight;
+    }
+
+
+
+
     public void setColor(CatColor color) {
         this.color = color;
     }
