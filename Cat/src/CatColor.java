@@ -4,5 +4,5 @@ public enum CatColor {
     ORANGE_COLOR,
     GRAY_COLOR,
 
-
 }
+

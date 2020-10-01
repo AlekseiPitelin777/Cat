@@ -12,35 +12,37 @@ public class Cat
     public static final double MAX_WEIGHT = 9000.5;
     public double setWeight;
     private double weight;
+    private CatColor color;
+
 
     //************урок 6
-    private String color;
 
 
 
 
 
     public Cat() {
-        weight = 1500.0 + 3000.0 * Math.random();
-        originWeight = weight;
-        catsCount++;
+        this (1500.0 + 3000.0 * Math.random());
+
     }
 
-    public Cat(double weight){
-        this();
+    public Cat (double weight){
         this.originWeight = weight;
         this.weight=weight;
-        if(weight<MIN_WEIGHT || weight>MAX_WEIGHT){
-           catDead();
+        if(weight>=MIN_WEIGHT && weight<=MAX_WEIGHT){
+           catsCount++;
         }
     }
 
-    public void setColor(String color){
+
+    public void setColor(CatColor color) {
         this.color = color;
     }
-    public String getColor(){
+    public CatColor getColor() {
         return color;
     }
+
+
       //======= Урок номер 2 возвратить массу съеденной еды
     public Double getFoodWheigh() {
 
