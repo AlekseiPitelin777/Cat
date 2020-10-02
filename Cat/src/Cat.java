@@ -40,6 +40,10 @@ public class Cat
         this.originWeight = clone.getOriginWeight();
         this.color = clone.getColor();
         this.foodWeight = clone.getFoodWeight();
+        if(weight>=MIN_WEIGHT && weight<=MAX_WEIGHT){
+            catsCount++;
+        }
+
     }
 
     public Cat cloneCat(){
